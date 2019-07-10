@@ -1,0 +1,22 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+        <% @articles.each do |article| %>
+          <div class="article">
+            <h2><%= link_to article.title, article_path(article), class: "headline" %></h2>
+            <div class="flexbox">
+              <p><%= article.content %></p>
+              <%= link_to article_path(article), method: :delete, data: { confirm: "Are you sure?"  } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+
+
